@@ -10,15 +10,15 @@ func main() {
 
 	var fruitList = []string{"Apple", "Orange", "Banana"}
 
-	fmt.Printf("Type of fruitList is %T\n", fruitList)
+	// fmt.Printf("Type of fruitList is %T\n", fruitList)
 
 	fruitList = append(fruitList, "Mango", "Guava")
 
-	fmt.Println("Fruit List is: ", fruitList)
+	// fmt.Println("Fruit List is: ", fruitList)
 
 	fruitList = fruitList[1:3] // [Orange, Banana]
 
-	fmt.Println("Fruit List after slicing: ", fruitList)
+	// fmt.Println("Fruit List after slicing: ", fruitList)
 
 	highScore := make([]int, 4)  //4 is number of values and not capacity
 
@@ -29,10 +29,21 @@ func main() {
 	// highScore[4] = 777
 
 	highScore = append(highScore, 555, 666, 777) // 4 more values added to highScore as after defafult allocation
-	fmt.Println("High Score is: ", highScore)
+	// fmt.Println("High Score is: ", highScore)
 
 	sort.Ints(highScore)
-	fmt.Println("Sorted High Score is: ", highScore)
+	// fmt.Println("Sorted High Score is: ", highScore)
 
-	fmt.Println(sort.IntsAreSorted(highScore))
+	// fmt.Println(sort.IntsAreSorted(highScore))
+
+	// how to remove a value from slice based on index
+
+	var courses = []string{"react", "angular", "vue", "svelte"}
+
+	fmt.Println("Courses: ", courses)
+
+	var index int = 2
+	courses = append(courses[:index], courses[index+1:]...)
+
+	fmt.Println("Courses after removing: ", courses)
 }
